@@ -1,20 +1,18 @@
 # EnvKB TKL DELIRIUM
 
 
-A low cost Standard TKL Design which takes inspiration from the CFTKB Mysterium.
+A low cost Standard 60% Design which takes inspiration from the CFTKB Mysterium.
 
 * Keyboard Maintainer: [Envious-Data](https://github.com/envious-data)
 * Hardware Supported: 
-  * EnvKB TKL Prototype (Revision 0)
-  * EnvKB TKL Rev1
-  * EnvKB TKL RGB **<- you are here**  
+  * EnvKB 60F Rev 0 **<-- You are here**
 
 
 
 Make example for this keyboard (after setting up your build environment):
 
 ```
-make envious/envkb-tkl/rgb:default
+make envious/60f/rev0:default
 ```
 
 

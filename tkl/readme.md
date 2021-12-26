@@ -7,6 +7,7 @@ A low cost Standard TKL Design which takes inspiration from the CFTKB Mysterium.
 * Hardware Supported: 
   * EnvKB TKL Prototype (Revision 0)
   * EnvKB TKL Rev1
+  * EnvKB TKL RGB HS
 
 
 
