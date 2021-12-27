@@ -18,14 +18,16 @@
 //#include "matrix.h"
 //#include "tusb.h"
 
-// this code was a workaround for USB Enumeration, it can be ignored
-/*
 void keyboard_post_init_kb(void) {
     debug_enable   = true;
     debug_keyboard = true;
 
     keyboard_post_init_user();
 }
+
+
+// this code was a workaround for USB Enumeration, it can be ignored
+/*
 
 static bool usb_enumerated = false;
 
