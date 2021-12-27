@@ -12,7 +12,7 @@ A small 12 Key macro pad for various uses
 Make example for this keyboard (after setting up your build environment):
 
 ```
-make envious/mcro/rev0:default
+make envious/mcro/rev1:default
 ```
 
 
