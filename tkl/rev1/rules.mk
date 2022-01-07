@@ -3,7 +3,7 @@ MCU_FAMILY = PICO
 MCU_SERIES = RP2040
 MCU = cortex-m0plus
 
-VIA_ENABLE = yes
+VIA_ENABLE = no
 
 # Build Options
 #   change yes to no to disable
@@ -21,5 +21,6 @@ BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 BLUETOOTH_ENABLE = no       # Enable Bluetooth
 AUDIO_ENABLE = no           # Audio output
-OLED_DRIVER_ENABLE = no     # oled enable 
-#LAYOUTS = default
+#OLED_ENABLE = yes	    # oled enable?
+#OLED_DRIVER_ENABLE = yes    # oled enable 
+#OLED_DRIVER = SSD1306

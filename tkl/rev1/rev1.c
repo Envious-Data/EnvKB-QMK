@@ -16,9 +16,12 @@
 
 #include "rev1.h"
 
+
+/*
 void keyboard_post_init_kb(void) {
-    debug_enable   = false;
-    debug_keyboard = false;
+    debug_enable   = true;
+    debug_keyboard = true;
 
     keyboard_post_init_user();
 }
+*/
