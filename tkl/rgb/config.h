@@ -24,8 +24,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PRODUCT_ID   0xE739
 #define DEVICE_VER   0x0001
 #define MANUFACTURER EnviousDesign
-#define PRODUCT      TKL HS RGB
-#define DESCRIPTION  TKL HS RGB
+#define PRODUCT      ALT Delirium
+#define DESCRIPTION  ALT Delirium
 
 /* key matrix size */
 #define MATRIX_ROWS 6
@@ -156,10 +156,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define BOOTMAGIC_LITE_ROW 0
 #define BOOTMAGIC_LITE_COLUMN 0
 
-
-// Backlight config starts after VIA's EEPROM usage,
-// dynamic keymaps start after this.
-//#define VIA_EEPROM_CUSTOM_CONFIG_SIZE 32
-
+// some via bits
 // VIA lighting is handled by the keyboard-level code
-// #define VIA_CUSTOM_LIGHTING_ENABLE
+#define VIA_CUSTOM_LIGHTING_ENABLE
