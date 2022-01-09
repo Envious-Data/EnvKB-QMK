@@ -1,3 +1,4 @@
 VIA_ENABLE = yes
 LTO_ENABLE = no
 VIAL_ENABLE = yes
+VIAL_INSECURE = yes
