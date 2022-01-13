@@ -17,11 +17,11 @@
 #include "rev1.h"
 
 
-
+/*
 void keyboard_post_init_kb(void) {
     debug_enable   = false;
     debug_keyboard = false;
 
     keyboard_post_init_user();
 }
-
+*/

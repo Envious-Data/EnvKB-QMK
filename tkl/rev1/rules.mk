@@ -21,7 +21,7 @@ BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 BLUETOOTH_ENABLE = no       # Enable Bluetooth
 AUDIO_ENABLE = no           # Audio output
-#OLED_ENABLE = no
-#OLED_DRIVER_ENABLE = no
-#OLED_DRIVER = SSD1306
+OLED_ENABLE = yes
+#OLED_DRIVER_ENABLE = yes   #doesnt do anything, may have been useful in the past.
+OLED_DRIVER = SSD1306
 
