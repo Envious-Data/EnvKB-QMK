@@ -17,8 +17,6 @@
 #ifdef RGB_MATRIX_ENABLE
 void rgb_show_layer(uint8_t led_min, uint8_t led_max) {
     switch (get_highest_layer(layer_state)) {
-        case _SCROLLLOCK:
-            return;
         default:
             break;
     }
@@ -41,9 +39,6 @@ void rgb_show_layer(uint8_t led_min, uint8_t led_max) {
                             break;
                         case RGB_TOG ... RGB_SPD:
                             continue;
-                        case RESET:
-                            hue = 64;
-                            break;
                         case MAGIC_TOGGLE_NKRO:
                             hue = 222;
                             break;
