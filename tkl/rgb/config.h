@@ -168,3 +168,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGBLIGHT_LAYERS_RETAIN_VAL 
 #define RGBLIGHT_SLEEP
 #define RGBLIGHT_DEFAULT_HUE 84
+
+//#define RGB_DI_PIN GP0
+// The number of LEDs connected
+#define DRIVER_LED_TOTAL 88
