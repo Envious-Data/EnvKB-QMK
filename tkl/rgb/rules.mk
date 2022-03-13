@@ -25,9 +25,3 @@ AUDIO_ENABLE = no           # Audio output
 RGB_MATRIX_ENABLE = yes
 RGB_MATRIX_DRIVER = WS2812
 WS2812_DRIVER = pio
-
-
-ifeq ($(strip $(RGB_MATRIX_ENABLE)), yes)
-	SRC += rgb_bits.c
-    SRC += rgb_indicators.c
-endif
