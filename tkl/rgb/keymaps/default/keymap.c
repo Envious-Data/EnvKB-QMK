@@ -110,33 +110,31 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //}
 //
 
-
-// Light LEDs 6 to 9 and 12 to 15 red when caps lock is active. Hard to ignore!
+// 
 const rgblight_segment_t PROGMEM my_layer0_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {0, 1, HSV_BLUE}       //  starting with LED 6, Light 4 LEDs
 );
-// Light LEDs 9 & 10 in cyan when keyboard layer 1 is active
+// 
 const rgblight_segment_t PROGMEM my_layer1_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {0, 1, HSV_BLUE}
 );
-// Light LEDs 9 & 10 in cyan when keyboard layer 1 is active
+// FN Key LED layer thing
 const rgblight_segment_t PROGMEM my_layer2_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {83, 1, HSV_RED}
+    {83, 1, HSV_BLUE}
 );
-// Light LEDs 11 & 12 in purple when keyboard layer 2 is active
+// 
 const rgblight_segment_t PROGMEM my_layer3_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {0, 1, HSV_BLUE}
 );
-// Light LEDs 13 & 14 in green when keyboard layer 3 is active
+// Capslock doot
 const rgblight_segment_t PROGMEM my_layer4_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 1, HSV_BLUE}
+    {50, 1, HSV_BLUE}
 );
-// Light LEDs 13 & 14 in green when keyboard layer 4 is active
+// 
 const rgblight_segment_t PROGMEM my_layer5_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {0, 1, HSV_BLUE}
 );
 // etc..
-
 
 // Now define the array of layers. Later layers take precedence
 const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
@@ -169,3 +167,4 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 	rgblight_set_layer_state(4, layer_state_cmp(state, _CAPSLOCK));
     return state;
 }
+
