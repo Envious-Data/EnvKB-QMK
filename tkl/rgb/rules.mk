@@ -1,7 +1,8 @@
 # MCU name
-MCU_FAMILY = PICO
-MCU_SERIES = RP2040
-MCU = cortex-m0plus
+MCU = RP2040
+
+ALLOW_WARNINGS = yes
+PICO_INTRINSICS_ENABLED = no # ATM Unsupported by ChibiOS!
 
 # Build Options
 #   change yes to no to disable
@@ -20,4 +21,5 @@ RGBLIGHT_ENABLE = yes       # Enable keyboard RGB underglow
 BLUETOOTH_ENABLE = no       # Enable Bluetooth
 AUDIO_ENABLE = no           # Audio output
 
-
+#for rgb to work with rp2040
+WS2812_DRIVER = pio

@@ -27,6 +27,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PRODUCT      ALT Delirium
 #define DESCRIPTION  ALT Delirium
 
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_LED GP25
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 500U
+
 /* key matrix size */
 #define MATRIX_ROWS 6
 #define MATRIX_COLS 18
@@ -45,9 +49,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *                  ROW2COL = ROW = Anode (+), COL = Cathode (-, marked on diode)
  *
  */
-#define MATRIX_ROW_PINS { 20, 21, 22, 26, 27, 28 }
-#define MATRIX_COL_PINS { 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 19, 18, 17, 16 }
-#define UNUSED_PINS
+#define MATRIX_ROW_PINS { GP20, GP21, GP22, GP26, GP27, GP28 }
+#define MATRIX_COL_PINS { GP2, GP3, GP4, GP5, GP6, GP7, GP8, GP9, GP10, GP11, GP12, GP13, GP14, GP15, GP19, GP18, GP17, GP16 }
+#define UNUSED_PINS { GP1, GP23, GP24, GP29 }
 
 /* COL2ROW, ROW2COL */
 #define DIODE_DIRECTION COL2ROW
@@ -67,7 +71,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define BACKLIGHT_LEVELS 3
 //#define BACKLIGHT_BREATHING
 
-#define RGB_DI_PIN 0
+#define NOP_FUDGE 0.4
+//#define RGB_DI_PIN 
+#define RGB_DI_PIN GP0
 //#ifdef RGB_DI_PIN
 #    define RGBLED_NUM 88
 #    define RGBLIGHT_HUE_STEP 8
@@ -153,10 +159,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define NO_ACTION_FUNCTION
 
 /* Bootmagic Lite key configuration */
-#define BOOTMAGIC_LITE_ROW 0
-#define BOOTMAGIC_LITE_COLUMN 0
+//#define BOOTMAGIC_LITE_ROW 0
+//#define BOOTMAGIC_LITE_COLUMN 0
 
 /* RGB BITS AND BOBS (not stock)*/
 #define RGBLIGHT_LAYERS
 #define RGBLIGHT_LAYER_BLINK
 #define RGBLIGHT_LAYERS_RETAIN_VAL 
+//
