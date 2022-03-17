@@ -1,7 +1,8 @@
 # MCU name
-MCU_FAMILY = PICO
-MCU_SERIES = RP2040
-MCU = cortex-m0plus
+MCU = RP2040
+
+ALLOW_WARNINGS = yes
+PICO_INTRINSICS_ENABLED = no # ATM Unsupported by ChibiOS!
 
 VIA_ENABLE = no
 
@@ -21,7 +22,7 @@ BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 BLUETOOTH_ENABLE = no       # Enable Bluetooth
 AUDIO_ENABLE = no           # Audio output
-OLED_ENABLE = yes
+OLED_ENABLE = no
 #OLED_DRIVER_ENABLE = yes   #doesnt do anything, may have been useful in the past.
 OLED_DRIVER = SSD1306
 

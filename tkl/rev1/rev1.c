@@ -14,14 +14,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "rev1.h"
+#include QMK_KEYBOARD_H
 
-
-/*
-void keyboard_post_init_kb(void) {
-    debug_enable   = false;
-    debug_keyboard = false;
-
-    keyboard_post_init_user();
+void board_init(void) {
 }
-*/
+
+//void keyboard_post_init_user(void) {
+//    debug_enable   = true;
+//    debug_matrix   = true;
+//    debug_keyboard = true;
+//    debug_mouse    = true;
+//}
+

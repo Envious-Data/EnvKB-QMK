@@ -27,9 +27,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PRODUCT      ALT Delirium
 #define DESCRIPTION  ALT Delirium
 
-#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
-#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_LED GP25
-#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 500U
+
 
 /* key matrix size */
 #define MATRIX_ROWS 6
@@ -223,13 +221,20 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #    define ENABLE_RGB_MATRIX_SOLID_MULTISPLASH
 #endif
 
-
 //some config bits
 //#define RGB_MATRIX_KEYPRESSES // reacts to keypresses
 //#define RGB_MATRIX_KEYRELEASES // reacts to keyreleases (instead of keypresses)
-#define RGB_DISABLE_AFTER_TIMEOUT 60 // number of ticks to wait until disabling effects (ticks seem to be 1 per second on my RP2040)
+#define RGB_DISABLE_AFTER_TIMEOUT 300 // number of ticks to wait until disabling effects (ticks seem to be 1 per second on my RP2040)
 #define RGB_DISABLE_WHEN_USB_SUSPENDED true // turn off effects when suspended
 //#define RGB_MATRIX_LED_PROCESS_LIMIT (DRIVER_LED_TOTAL + 4) / 5 // limits the number of LEDs to process in an animation per task run (increases keyboard responsiveness)
-#define RGB_MATRIX_LED_FLUSH_LIMIT 16 // limits in milliseconds how frequently an animation will update the LEDs. 16 (16ms) is equivalent to limiting to 60fps (increases keyboard responsiveness)
+#define RGB_MATRIX_LED_FLUSH_LIMIT 8 // limits in milliseconds how frequently an animation will update the LEDs. 16 (16ms) is equivalent to limiting to 60fps (increases keyboard responsiveness)
 //#define RGB_MATRIX_LED_FLUSH_LIMIT 16 // limits in milliseconds how frequently an animation will update the LEDs. 16 (16ms) is equivalent to limiting to 60fps (increases keyboard responsiveness)
 #define RGB_MATRIX_MAXIMUM_BRIGHTNESS 128
+#define EECONFIG_RGB_MATRIX (uint32_t *)28
+
+// doesnt appear to work as of 17th March 2022
+//probably useful for people who dont have a RESET button
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET // Activates the double-tap behavior
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 2000U // Timeout window in ms in which the double tap can occur.
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_LED_MASK 0U // Specify a optional status led which blinks when entering the bootloader
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_LED GP25

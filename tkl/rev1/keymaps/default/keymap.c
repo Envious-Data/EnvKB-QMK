@@ -14,17 +14,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include QMK_KEYBOARD_H
-//#include "pico_eeprom.h"
-
-/*
-void keyboard_post_init_user(void) {
-  // Customise these values to desired behaviour
-   debug_enable=true;
-   debug_matrix=true;
-   debug_keyboard=true;
-   debug_mouse=true;
-}
-*/
 
 enum layer_names {
     _BASE,
@@ -33,6 +22,8 @@ enum layer_names {
     _CAPSLOCK,
     _SCROLLLOCK
 };
+
+#define RESET KC_NO
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Base */
@@ -85,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 #ifdef OLED_ENABLE
-/*
+
 bool oled_task_user(void) {
     // Host Keyboard Layer Status
     oled_write_P(PSTR("Layer: "), false);
@@ -113,7 +104,7 @@ bool oled_task_user(void) {
     
     return false;
 }
-*/
+
 static void render_logo(void) {
     static const char PROGMEM qmk_logo[] = {
         0x80, 0x81, 0x82, 0x83, 0x84, 0x85, 0x86, 0x87, 0x88, 0x89, 0x8A, 0x8B, 0x8C, 0x8D, 0x8E, 0x8F, 0x90, 0x91, 0x92, 0x93, 0x94,

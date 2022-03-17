@@ -46,8 +46,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
 
-#define MATRIX_ROW_PINS { 4, 11, 15 }
-#define MATRIX_COL_PINS { 18, 19, 20, 21 }
+#define MATRIX_ROW_PINS { GP4, GP11, GP15 }
+#define MATRIX_COL_PINS { GP18, GP19, GP20, GP21 }
 #define UNUSED_PINS
 
 /* COL2ROW, ROW2COL */
@@ -156,4 +156,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* Bootmagic Lite key configuration */
 #define BOOTMAGIC_LITE_ROW 0
 #define BOOTMAGIC_LITE_COLUMN 0
-#define DYNAMIC_KEYMAP_MACRO_COUNT 16
+//#define DYNAMIC_KEYMAP_MACRO_COUNT 16

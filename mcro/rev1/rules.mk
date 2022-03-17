@@ -1,9 +1,15 @@
 # MCU name
-MCU_FAMILY = PICO
-MCU_SERIES = RP2040
-MCU = cortex-m0plus
+# MCU_FAMILY = PICO
+# MCU_SERIES = RP2040
+# MCU = cortex-m0plus
 
-VIA_ENABLE = yes
+# MCU name
+MCU = RP2040
+
+ALLOW_WARNINGS = yes
+PICO_INTRINSICS_ENABLED = no # ATM Unsupported by ChibiOS!
+
+VIA_ENABLE = no
 
 # Build Options
 #   change yes to no to disable
