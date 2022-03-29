@@ -169,3 +169,12 @@ void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
 }
 
 */
+/*
+void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+    if (host_keyboard_led_state().caps_lock) {
+        RGB_MATRIX_INDICATOR_SET_COLOR(0, 255, 255, 255); // assuming caps lock is at led #0
+    } else {
+        RGB_MATRIX_INDICATOR_SET_COLOR(0, 0, 0, 0);
+    }
+}
+*/
