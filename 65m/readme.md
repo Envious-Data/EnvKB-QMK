@@ -1,18 +1,18 @@
 # EnvKB 60F
 
 
-A low cost 65% design meant to be compact and compatible with most standard keycap sets.
+A low cost Standard 60% Design which takes inspiration from the CFTKB Mysterium.
 
 * Keyboard Maintainer: [Envious-Data](https://github.com/envious-data)
 * Hardware Supported: 
-  * EnvKB 65M **<- you are here**
+  * EnvKB 60F Rev0 **<- you are here**
 
 
 
 Make example for this keyboard (after setting up your build environment):
 
 ```
-make envious/envkb/65m:default
+make envious/envkb/60f/rev0:default
 ```
 
 
