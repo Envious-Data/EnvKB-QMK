@@ -15,9 +15,6 @@
  */
 #pragma once
 
-#include_next <mcuconf.h>
+#include_next <halconf.h>
 
-#define RP_I2C_USE_I2C0 TRUE
-#define RP2040_MCUCONF  TRUE
-#define RP_I2C_USE_I2C0 TRUE
-#define RP_I2C_USE_I2C1 FALSE
+#define HAL_USE_I2C TRUE
