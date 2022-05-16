@@ -5,7 +5,7 @@ A small 12 Key macro pad for various uses
 
 * Keyboard Maintainer: [Envious-Data](https://github.com/envious-data)
 * Hardware Supported: 
-  * EnvKB MCRO Rev 1 **<-- You are here**
+  * EnvKB MCRO **<-- You are here**
 
 
 
@@ -13,6 +13,10 @@ Make example for this keyboard (after setting up your build environment):
 
 ```
 make envious/mcro/rev1:default
+```
+OR
+```
+make envious/mcro/rev2:default
 ```
 
 
