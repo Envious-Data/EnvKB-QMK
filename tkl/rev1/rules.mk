@@ -1,5 +1,6 @@
 # MCU name
 MCU = RP2040
+BOOTLOADER = rp2040
 
 ALLOW_WARNINGS = yes
 PICO_INTRINSICS_ENABLED = no # ATM Unsupported by ChibiOS!
@@ -23,11 +24,5 @@ RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 BLUETOOTH_ENABLE = no       # Enable Bluetooth
 AUDIO_ENABLE = no           # Audio output
 
-#oled bits
 #OLED_ENABLE = yes
 #OLED_DRIVER = SSD1306
-
-#I dont remember what this is for
-#EXTRAFLAGS += -flto
-
-SERIAL_DRIVER = pio

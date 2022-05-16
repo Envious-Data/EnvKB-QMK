@@ -14,22 +14,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include QMK_KEYBOARD_H
-//#include "pico_eeprom.h"
-#include "print.h"
-#include "stdbool.h"
-#include <stdio.h>
-
-#define rgb_matrix_hsv_to_rgb hsv_to_rgb
-
-//Customise these values to desired behaviour
-/*
-void keyboard_post_init_user(void) {
-  debug_enable=true;
-  debug_matrix=true;
-  debug_keyboard=true;
-  debug_mouse=true;
-}
-*/
 
 enum layer_names {
     _BASE,
@@ -38,6 +22,9 @@ enum layer_names {
     _CAPSLOCK,
     _SCROLLLOCK
 };
+
+#define RESET KC_NO
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Base */
     [_BASE] = LAYOUT(
@@ -52,11 +39,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_FN] = LAYOUT(
         KC_TRNS,          KC_F13,   KC_F14, KC_F15,  KC_F16,  KC_F17,  KC_F18,  KC_F19,  KC_F20,  KC_F21,  KC_F22,  KC_F23,  KC_F24,  KC_MUTE, KC_VOLD, KC_VOLU,
 	    
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, RGB_MOD, RGB_SAI, RGB_VAI,
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_MYCM, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, RGB_RMOD,RGB_SAD, RGB_VAD,
-        KC_TRNS, KC_TRNS, KC_TRNS, DEBUG,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, RGB_TOG,
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_CALCULATOR,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS, KC_TRNS,          KC_TRNS,          RGB_SPI,
-        KC_TRNS, KC_TRNS, KC_TRNS,                   KC_TRNS,                             KC_TRNS, KC_TRNS,         KC_TRNS, KC_TRNS, RGB_HUI, RGB_SPD, RGB_HUD
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_MYCM, RESET,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS, DEBUG,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_CALCULATOR,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS, KC_TRNS,          KC_TRNS,          KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS,                   KC_TRNS,                             KC_TRNS, KC_TRNS,         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
     ),
     [_ADJUST] = LAYOUT(
         KC_TRNS,          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
@@ -72,12 +59,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	    
         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_NO  , KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS,          KC_TRNS,
         KC_TRNS, KC_TRNS, KC_TRNS,                   KC_TRNS,                            KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
     ),
     [_SCROLLLOCK] = LAYOUT(
-        KC_TRNS,          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO  , KC_TRNS,
+        KC_TRNS,          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
 	    
         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
@@ -87,103 +74,32 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 };
 
-/*
-int capslockstate;
-int scrolllockstate;
-void keyboard_pre_init_user(void) {
-	capslockstate = 0;
-	scrolllockstate = 0;
-}
-*/
+#ifdef OLED_ENABLE
+bool oled_task_user(void) {
+    // Host Keyboard Layer Status
+    oled_write_P(PSTR("Layer: "), false);
 
-void suspend_power_down_user(void) {
-    rgb_matrix_set_suspend_state(true);
-}
-
-void suspend_wakeup_init_user(void) {
-    rgb_matrix_set_suspend_state(false);
-}
-
-
-void rgb_matrix_indicators_kb(void) {
-	//HSV hsv = rgb_matrix_get_hsv();
-	//RGB rgb = hsv_to_rgb(hsv);
-	switch (biton32(layer_state)) {
-		case 1:
-			rgb_matrix_set_color(83, 16, 16, 16);
-			break;
-		//case 3:
-		//	rgb_matrix_set_color(56, 16, 16, 16);
-		//	break;
-		default:
-		break;
-	}
-}
-
-/*
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-	switch (keycode) {
-		case KC_CAPS:
-			if (record->event.pressed) {
-				capslockstate = !(capslockstate);
-			} else {
-			}
-			break;
-			//return false; // Skip all further processing of this key
-		case KC_SLCK:
-			if (record->event.pressed) {
-				scrolllockstate = !(scrolllockstate);
-			} else {
-			}
-			break; // I think having a break here is likely not the correct way to do this but it works so eh?
-			//return false; // Skip all further processing of this key
-	default:
-		return true; // Process all other keycodes normally
-	}
-}
-*/
-/*
-void matrix_scan_user(void) {
-    if ((capslockstate > 0)) {
-		rgb_matrix_set_color(50, 16, 16, 16);
+    switch (get_highest_layer(layer_state)) {
+        case _BASE:
+            oled_write_P(PSTR("Default\n"), false);
+            break;
+        case _FN:
+            oled_write_P(PSTR("FN\n"), false);
+            break;
+        case _ADJUST:
+            oled_write_P(PSTR("ADJ\n"), false);
+            break;
+        default:
+            // Or use the write_ln shortcut over adding '\n' to the end of your string
+            oled_write_ln_P(PSTR("Undefined"), false);
     }
-    if ((scrolllockstate > 0)) {
-		rgb_matrix_set_color(14, 16, 16, 16);
-    }
-	//if (host_keyboard_leds() & (1<<USB_LED_CAPS_LOCK)) {
-	//	capslockstate = true;
-	//	printf("meow\n");
-	//} else {
-	//	capslockstate = false;
-	//}
+
+    // Host Keyboard LED Status
+    led_t led_state = host_keyboard_led_state();
+    oled_write_P(led_state.num_lock ? PSTR("NUM ") : PSTR("    "), false);
+    oled_write_P(led_state.caps_lock ? PSTR("CAP ") : PSTR("    "), false);
+    oled_write_P(led_state.scroll_lock ? PSTR("SCR ") : PSTR("    "), false);
+    
+    return false;
 }
-*/
-
-
-/*
-// Capslock indicator on the side lights.
-void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
-    if ((capslockstate = 1)) {
-        for (uint8_t i = led_min; i <= led_max; i++) {
-            if (g_led_config.flags[i] & LED_FLAG_INDICATOR) {
-                rgb_matrix_set_color(i, 16, 16, 16);
-            }
-        }
-    }
-}
-
-*/
-
-void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
-    if (host_keyboard_led_state().caps_lock) {
-        RGB_MATRIX_INDICATOR_SET_COLOR(50, 16, 16, 16); // assuming caps lock is at led #0
-	}	
-    if (host_keyboard_led_state().scroll_lock) {
-        RGB_MATRIX_INDICATOR_SET_COLOR(14, 16, 16, 16); // assuming caps lock is at led #0
-		
-    } else {
-        //RGB_MATRIX_INDICATOR_SET_COLOR(0, 0, 0, 0);
-    }
-	//break;
-}
-
+#endif

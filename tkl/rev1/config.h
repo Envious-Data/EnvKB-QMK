@@ -156,9 +156,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define BOOTMAGIC_LITE_ROW 0
 //#define BOOTMAGIC_LITE_COLUMN 0
 
-
-#ifdef OLED_ENABLE
-//lower brightness to avoid degredation
-#define OLED_BRIGHTNESS 128
-#define OLED_DISPLAY_ADDRESS 0x3C
-#endif
+//#define I2C1_SDA_PIN GP0
+//#define I2C1_SCL_PIN GP1
+//#define I2C_DRIVER I2CD1
