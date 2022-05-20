@@ -14,7 +14,7 @@ A low cost Standard TKL Design which takes inspiration from the CFTKB Mysterium.
 Make example for this keyboard (after setting up your build environment):
 
 ```
-make envkb/tkl/rev0:default
+make envious/envkb-tkl/rev1:default
 ```
 
 

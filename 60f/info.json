@@ -3,7 +3,7 @@
     "url": "",
     "maintainer": "Envious Design",
     "layouts": {
-        "LAYOUT_all": {
+        "LAYOUT_60_iso": {
             "layout": [
                 {"x": 0, "y": 0},
                 {"x": 1, "y": 0},

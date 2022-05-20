@@ -5,6 +5,7 @@ A low cost Standard TKL Design which takes inspiration from the CFTKB Mysterium.
 
 * Keyboard Maintainer: [Envious-Data](https://github.com/envious-data)
 * Hardware Supported: 
+  * EnvKB TKL Prototype (Revision 0)
   * EnvKB TKL Rev1 **<- you are here**
 
 
@@ -13,10 +14,6 @@ Make example for this keyboard (after setting up your build environment):
 
 ```
 make envious/envkb-tkl/rev1:default
-```
-OR If you have an oled installed
-```
-make envious/envkb-tkl/rev1:oled
 ```
 
 
