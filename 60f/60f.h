@@ -1,4 +1,4 @@
-/* Copyright 2021 sekigon-gonnocLAYOUT_60_iso
+/* Copyright 2022 Envious DesignLAYOUT_60_iso
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@
  *
  *
  */
-#define LAYOUT_60_all( \
+#define LAYOUT_60_comb( \
 	 KC100, KC101, KC102, KC103, KC104, KC105, KC106, KC107, KC108, KC109, KC110, KC111, KC112,        KC113, \
 	 KC200,        KC201, KC202, KC203, KC204, KC205, KC206, KC207, KC208, KC209, KC210, KC211, KC212, KC213, \
 	 KC300,        KC301, KC302, KC303, KC304, KC305, KC306, KC307, KC308, KC309, KC310, KC311, KC312, KC313, \

@@ -1,5 +1,5 @@
 /*
-Copyright 2021 sekigon-gonnoc
+Copyright 2022 Envious Design
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -24,8 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PRODUCT_ID   0x000A
 #define DEVICE_VER   0x0001
 #define MANUFACTURER EnviousDesign
-#define PRODUCT      ALT Delirium
-#define DESCRIPTION  ALT Delirium
+#define PRODUCT      ALT Delirium RGB
 
 
 
@@ -33,7 +32,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MATRIX_ROWS 6
 #define MATRIX_COLS 18
 
-#define GPIO_INPUT_PIN_DELAY 100
+//#define GPIO_INPUT_PIN_DELAY 100
 //#define DEBUG_MATRIX_SCAN_RATE
 //#define DEBUG_ACTION
 

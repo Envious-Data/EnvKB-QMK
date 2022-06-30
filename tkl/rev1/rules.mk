@@ -5,8 +5,6 @@ BOOTLOADER = rp2040
 ALLOW_WARNINGS = yes
 PICO_INTRINSICS_ENABLED = no # ATM Unsupported by ChibiOS!
 
-VIA_ENABLE = no
-
 # Build Options
 #   change yes to no to disable
 #

@@ -1,5 +1,5 @@
 /*
-Copyright 2021 sekigon-gonnoc
+Copyright 2022 Envious Design
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -29,11 +29,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* key matrix size */
 #define MATRIX_ROWS 5
 #define MATRIX_COLS 15
-
-#define GPIO_INPUT_PIN_DELAY 100
-
-#define DEBUG_MATRIX_SCAN_RATE
-#define DEBUG_ACTION
 
 /*
  * Keyboard Matrix Assignments
@@ -149,8 +144,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define NO_ACTION_ONESHOT
 
 /* disable these deprecated features by default */
-#define NO_ACTION_MACRO
-#define NO_ACTION_FUNCTION
+//#define NO_ACTION_MACRO
+//#define NO_ACTION_FUNCTION
 
 /* Bootmagic Lite key configuration */
 #define BOOTMAGIC_LITE_ROW 0

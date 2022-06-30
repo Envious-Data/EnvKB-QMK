@@ -1,4 +1,4 @@
-/* Copyright 2021 sekigon-gonnocLAYOUT_60_iso
+/* Copyright 2022 Envious DesignLAYOUT_60_iso
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
