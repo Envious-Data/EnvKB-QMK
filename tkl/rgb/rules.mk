@@ -1,8 +1,8 @@
 # MCU name
 MCU = RP2040
 
-ALLOW_WARNINGS = yes
-PICO_INTRINSICS_ENABLED = no # ATM Unsupported by ChibiOS!
+#ALLOW_WARNINGS = yes
+#PICO_INTRINSICS_ENABLED = no # ATM Unsupported by ChibiOS!
 
 # Build Options
 #   change yes to no to disable
@@ -25,3 +25,6 @@ AUDIO_ENABLE = no          # Audio output
 RGB_MATRIX_ENABLE = yes
 RGB_MATRIX_DRIVER = WS2812
 WS2812_DRIVER = pio
+
+#store data for RGB stuff
+EEPROM_DRIVER = vendor
