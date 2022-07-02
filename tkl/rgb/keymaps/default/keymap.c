@@ -21,16 +21,6 @@
 
 #define rgb_matrix_hsv_to_rgb hsv_to_rgb
 
-//Customise these values to desired behaviour
-/*
-void keyboard_post_init_user(void) {
-  debug_enable=true;
-  debug_matrix=true;
-  debug_keyboard=true;
-  debug_mouse=true;
-}
-*/
-
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Base */
@@ -72,14 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 };
 
-/*
-int capslockstate;
-int scrolllockstate;
-void keyboard_pre_init_user(void) {
-	capslockstate = 0;
-	scrolllockstate = 0;
-}
-*/
+
 
 void suspend_power_down_user(void) {
     rgb_matrix_set_suspend_state(true);
@@ -91,84 +74,24 @@ void suspend_wakeup_init_user(void) {
 
 
 void rgb_matrix_indicators_kb(void) {
-	//HSV hsv = rgb_matrix_get_hsv();
-	//RGB rgb = hsv_to_rgb(hsv);
 	switch (biton32(layer_state)) {
 		case 1:
 			rgb_matrix_set_color(83, 16, 16, 16);
 			break;
-		//case 3:
-		//	rgb_matrix_set_color(56, 16, 16, 16);
-		//	break;
 		default:
 		break;
 	}
 }
 
-/*
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-	switch (keycode) {
-		case KC_CAPS:
-			if (record->event.pressed) {
-				capslockstate = !(capslockstate);
-			} else {
-			}
-			break;
-			//return false; // Skip all further processing of this key
-		case KC_SLCK:
-			if (record->event.pressed) {
-				scrolllockstate = !(scrolllockstate);
-			} else {
-			}
-			break; // I think having a break here is likely not the correct way to do this but it works so eh?
-			//return false; // Skip all further processing of this key
-	default:
-		return true; // Process all other keycodes normally
-	}
-}
-*/
-/*
-void matrix_scan_user(void) {
-    if ((capslockstate > 0)) {
-		rgb_matrix_set_color(50, 16, 16, 16);
-    }
-    if ((scrolllockstate > 0)) {
-		rgb_matrix_set_color(14, 16, 16, 16);
-    }
-	//if (host_keyboard_leds() & (1<<USB_LED_CAPS_LOCK)) {
-	//	capslockstate = true;
-	//	printf("meow\n");
-	//} else {
-	//	capslockstate = false;
-	//}
-}
-*/
-
-
-/*
-// Capslock indicator on the side lights.
-void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
-    if ((capslockstate = 1)) {
-        for (uint8_t i = led_min; i <= led_max; i++) {
-            if (g_led_config.flags[i] & LED_FLAG_INDICATOR) {
-                rgb_matrix_set_color(i, 16, 16, 16);
-            }
-        }
-    }
-}
-
-*/
 
 void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     if (host_keyboard_led_state().caps_lock) {
-        RGB_MATRIX_INDICATOR_SET_COLOR(50, 16, 16, 16); // assuming caps lock is at led #0
+        RGB_MATRIX_INDICATOR_SET_COLOR(50, 16, 16, 16); // assuming caps lock is at led #50
 	}	
     if (host_keyboard_led_state().scroll_lock) {
-        RGB_MATRIX_INDICATOR_SET_COLOR(14, 16, 16, 16); // assuming caps lock is at led #0
+        RGB_MATRIX_INDICATOR_SET_COLOR(14, 16, 16, 16); // assuming caps lock is at led #14
 		
     } else {
-        //RGB_MATRIX_INDICATOR_SET_COLOR(0, 0, 0, 0);
     }
-	//break;
 }
 

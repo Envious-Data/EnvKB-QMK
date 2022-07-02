@@ -1,4 +1,4 @@
-# EnvKB TKL DELIRIUM
+# EnvKB DELIRIUM
 
 
 A low cost Standard TKL Design which takes inspiration from the CFTKB Mysterium.
@@ -7,6 +7,7 @@ A low cost Standard TKL Design which takes inspiration from the CFTKB Mysterium.
 * Hardware Supported: 
   * EnvKB TKL Prototype (Revision 0)
   * EnvKB TKL Rev1 **<- you are here**
+  * EnvKB TKL RGB HS
 
 
 

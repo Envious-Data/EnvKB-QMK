@@ -1,4 +1,4 @@
-# EnvKB TKL DELIRIUM
+# EnvKB DELIRIUM
 
 
 A low cost Standard TKL Design which takes inspiration from the CFTKB Mysterium.

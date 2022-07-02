@@ -30,7 +30,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MATRIX_ROWS 6
 #define MATRIX_COLS 18
 
-#define GPIO_INPUT_PIN_DELAY 100
+//#define GPIO_INPUT_PIN_DELAY 100
 //#define DEBUG_MATRIX_SCAN_RATE
 //#define DEBUG_ACTION
 

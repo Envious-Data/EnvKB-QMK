@@ -1,4 +1,4 @@
-# EnvKB 60F
+# EnvKB 65M
 
 
 A low cost 65% kit featuring split space and an attempt at fitting a standard keycap set.
