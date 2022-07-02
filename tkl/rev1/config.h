@@ -20,18 +20,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "config_common.h"
 
 /* USB Device descriptor parameter */
-#define PRODUCT EnvKB R1 TKL
+#define PRODUCT Delirium TKL Rev 1.0+
 #define VENDOR_ID    0x2E8A
 #define PRODUCT_ID   0xE739
 #define DEVICE_VER   0x0001
 #define MANUFACTURER EnviousDesign
-#define PRODUCT      EnvKB R1 TKL
 
 /* key matrix size */
 #define MATRIX_ROWS 6
 #define MATRIX_COLS 18
 
-#define GPIO_INPUT_PIN_DELAY 100
+//#define GPIO_INPUT_PIN_DELAY 100
 //#define DEBUG_MATRIX_SCAN_RATE
 //#define DEBUG_ACTION
 

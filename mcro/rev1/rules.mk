@@ -5,9 +5,10 @@
 
 # MCU name
 MCU = RP2040
+BOOTLOADER = rp2040
 
-ALLOW_WARNINGS = yes
-PICO_INTRINSICS_ENABLED = no # ATM Unsupported by ChibiOS!
+#ALLOW_WARNINGS = yes
+#PICO_INTRINSICS_ENABLED = no # ATM Unsupported by ChibiOS!
 
 VIA_ENABLE = no
 

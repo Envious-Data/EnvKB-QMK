@@ -13,31 +13,31 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
-//#include "rev1.h"
-//#include "matrix.h"
-//#include "tusb.h"
-
 #include QMK_KEYBOARD_H
+//#include "pico_eeprom.h"
 
-void board_init(void) {
-}
 
-#ifdef RGB_MATRIX_ENABLE
-led_config_t g_led_config = { {
-  // Key Matrix to LED Index
-  {   0, 1, 2,  3 },
-  {   4, 5, 6,  7 },
-  {   8, 9, 10, 11 },
-}, {
-	// LED Index to Physical Position
-	{  0,0  }, { 75,0  }, {149,0  }, {224,0  }, 
-	{  0,32 }, { 75,32 }, {149,32 }, {224,32 }, 
-	{  0,64 }, { 75,64 }, {149,64 }, {224,64 },
-}, {
-  // LED Index to Flag
-  4, 4, 4, 4,
-  4, 4, 4, 4,
-  4, 4, 4, 4,
-} };
-#endif
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+    /* Base */
+    [0] = {
+        {KC_F13, KC_F14, KC_F15, KC_F16},
+        {KC_F17, KC_F18, KC_F19, KC_F20},
+        {KC_F21, KC_F22, KC_F23, KC_F24},
+    },
+    [1] = {
+        {KC_F13, KC_F14, KC_F15, KC_F16},
+        {KC_F17, KC_F18, KC_F19, KC_F20},
+        {KC_F21, KC_F22, KC_F23, KC_F24},
+    },
+    [2] = {
+        {KC_F13, KC_F14, KC_F15, KC_F16},
+        {KC_F17, KC_F18, KC_F19, KC_F20},
+        {KC_F21, KC_F22, KC_F23, KC_F24},
+    },
+    [3] = {
+        {KC_F13, KC_F14, KC_F15, KC_F16},
+        {KC_F17, KC_F18, KC_F19, KC_F20},
+        {KC_F21, KC_F22, KC_F23, KC_F24},
+    },
+};
+

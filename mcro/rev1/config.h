@@ -22,7 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* USB Device descriptor parameter */
 #define VENDOR_ID    0x2E8A
 #define PRODUCT_ID   0xE739
-#define DEVICE_VER   0x0001
+#define DEVICE_VER   0x0011
 #define MANUFACTURER EnviousDesign
 #define PRODUCT      MCRO 1.0
 

@@ -1,5 +1,6 @@
 # MCU name
 MCU = RP2040
+BOOTLOADER = rp2040
 
 #ALLOW_WARNINGS = yes
 #PICO_INTRINSICS_ENABLED = no # ATM Unsupported by ChibiOS!
@@ -24,7 +25,5 @@ AUDIO_ENABLE = no          # Audio output
 #for rgb to work with rp2040
 RGB_MATRIX_ENABLE = yes
 RGB_MATRIX_DRIVER = WS2812
-WS2812_DRIVER = pio
-
-#store data for RGB stuff
+WS2812_DRIVER = vendor
 EEPROM_DRIVER = vendor

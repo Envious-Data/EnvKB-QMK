@@ -24,7 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PRODUCT_ID   0xE739
 #define DEVICE_VER   0x0001
 #define MANUFACTURER EnviousDesign
-#define PRODUCT      EnvKB 60F
+#define PRODUCT		 60F 1.0
 
 /* key matrix size */
 #define MATRIX_ROWS 5

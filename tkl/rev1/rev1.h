@@ -31,7 +31,8 @@
  *
  *
  */
-#define LAYOUT( \
+
+#define LAYOUT_tkl_comb( \
    	 KC000,        KC001, KC002, KC003, KC004, KC005, KC006, KC007, KC008,        KC009, KC010, KC011, KC012, KC013, KC014, KC015, \
    	 															       \
 	 KC100, KC101, KC102, KC103, KC104, KC105, KC106, KC107, KC108, KC109, KC110, KC111, KC112,        KC113, KC114, KC115, KC116, \
