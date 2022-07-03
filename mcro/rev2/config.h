@@ -1,36 +1,37 @@
-/* Copyright 2022 Adam K (@Envious-Data)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
- 
+/*
+Copyright 2021 sekigon-gonnoc
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
 
 #pragma once
 
 #include "config_common.h"
 
 /* USB Device descriptor parameter */
-#define VENDOR_ID 0xE739
-#define PRODUCT_ID 0xA400
-#define DEVICE_VER 0x0001
+#define VENDOR_ID    0x2345
+#define PRODUCT_ID   0x0548
+#define DEVICE_VER   0x0001
 #define MANUFACTURER EnviousDesign
-#define PRODUCT ALT Delirium RGB
+#define PRODUCT      MCRO 2.0
 
 /* key matrix size */
-#define MATRIX_ROWS 6
-#define MATRIX_COLS 18
+#define MATRIX_ROWS 3
+#define MATRIX_COLS 5
 
-//#define GPIO_INPUT_PIN_DELAY 100
+#define GPIO_INPUT_PIN_DELAY 100
+
 //#define DEBUG_MATRIX_SCAN_RATE
 //#define DEBUG_ACTION
 
@@ -44,12 +45,10 @@
  *                  ROW2COL = ROW = Anode (+), COL = Cathode (-, marked on diode)
  *
  */
-#define MATRIX_ROW_PINS \
-    { GP20, GP21, GP22, GP26, GP27, GP28 }
-#define MATRIX_COL_PINS \
-    { GP2, GP3, GP4, GP5, GP6, GP7, GP8, GP9, GP10, GP11, GP12, GP13, GP14, GP15, GP19, GP18, GP17, GP16 }
-#define UNUSED_PINS \
-    { GP1, GP23, GP24, GP29 }
+
+#define MATRIX_ROW_PINS { GP13, GP14, GP15 }
+#define MATRIX_COL_PINS { GP8, GP9, GP10, GP11, GP12 }
+#define UNUSED_PINS
 
 /* COL2ROW, ROW2COL */
 #define DIODE_DIRECTION COL2ROW
@@ -69,18 +68,17 @@
 //#define BACKLIGHT_LEVELS 3
 //#define BACKLIGHT_BREATHING
 
-//#define NOP_FUDGE 0.4
-//#define RGB_DI_PIN
 #define RGB_DI_PIN GP0
+#define DRIVER_LED_TOTAL 12
+#define RGBLED_NUM 12
 //#ifdef RGB_DI_PIN
-#define RGBLED_NUM 88
-#define RGBLIGHT_HUE_STEP 1
-#define RGBLIGHT_SAT_STEP 1
-#define RGBLIGHT_VAL_STEP 1
-#define RGBLIGHT_LIMIT_VAL 64 /* The maximum brightness level */
-#define RGBLIGHT_SLEEP        /* If defined, the RGB lighting will be switched off when the host goes to sleep */
+#    define RGBLIGHT_HUE_STEP 1
+#    define RGBLIGHT_SAT_STEP 1
+#    define RGBLIGHT_VAL_STEP 1
+#    define RGBLIGHT_LIMIT_VAL 64 /* The maximum brightness level */
+#    define RGBLIGHT_SLEEP  /* If defined, the RGB lighting will be switched off when the host goes to sleep */
 /*== all animations enable ==*/
-#define RGBLIGHT_ANIMATIONS
+#    define RGBLIGHT_ANIMATIONS
 /*== or choose animations ==*/
 //#    define RGBLIGHT_EFFECT_BREATHING
 //#    define RGBLIGHT_EFFECT_RAINBOW_MOOD
@@ -99,6 +97,17 @@
 //#    define RGBLIGHT_EFFECT_BREATHE_MAX    255   // 0 to 255
 //#endif
 
+//some config bits
+//#define RGB_MATRIX_KEYPRESSES // reacts to keypresses
+//#define RGB_MATRIX_KEYRELEASES // reacts to keyreleases (instead of keypresses)
+#define RGB_DISABLE_AFTER_TIMEOUT 0 // number of ticks to wait until disabling effects (ticks seem to be 1 per second on my RP2040)
+#define RGB_DISABLE_WHEN_USB_SUSPENDED true // turn off effects when suspended
+//#define RGB_MATRIX_LED_PROCESS_LIMIT (DRIVER_LED_TOTAL + 4) / 5 // limits the number of LEDs to process in an animation per task run (increases keyboard responsiveness)
+//#define RGB_MATRIX_LED_FLUSH_LIMIT 8 // limits in milliseconds how frequently an animation will update the LEDs. 16 (16ms) is equivalent to limiting to 60fps (increases keyboard responsiveness)
+//#define RGB_MATRIX_LED_FLUSH_LIMIT 16 // limits in milliseconds how frequently an animation will update the LEDs. 16 (16ms) is equivalent to limiting to 60fps (increases keyboard responsiveness)
+#define RGB_MATRIX_MAXIMUM_BRIGHTNESS 64
+//#define EECONFIG_RGB_MATRIX (uint32_t *)28
+
 /* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
 #define DEBOUNCE 5
 
@@ -106,9 +115,9 @@
 //#define MATRIX_HAS_GHOST
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
-#define LOCKING_SUPPORT_ENABLE
+//#define LOCKING_SUPPORT_ENABLE
 /* Locking resynchronize hack */
-#define LOCKING_RESYNC_ENABLE
+//#define LOCKING_RESYNC_ENABLE
 
 /* If defined, GRAVE_ESC will always act as ESC when CTRL is held.
  * This is useful for the Windows task manager shortcut (ctrl+shift+esc).
@@ -159,19 +168,14 @@
 /* Bootmagic Lite key configuration */
 //#define BOOTMAGIC_LITE_ROW 0
 //#define BOOTMAGIC_LITE_COLUMN 0
+//#define DYNAMIC_KEYMAP_MACRO_COUNT 16
 
-/* RGB BITS AND BOBS (not stock)
-#define RGBLIGHT_LAYERS
-#define RGBLIGHT_LAYER_BLINK
-#define RGBLIGHT_LAYERS_RETAIN_VAL
-#define RGBLIGHT_SLEEP
-#define RGBLIGHT_DEFAULT_HUE 84
-*/
+//le rotary encoder lad
+#define ENCODERS_PAD_A { GP6 }
+#define ENCODERS_PAD_B { GP7 }
+#define ENCODER_RESOLUTION 4
 
-//#define RGB_DI_PIN GP0
-// The number of LEDs connected
-#define DRIVER_LED_TOTAL 88
-
+//some more RGB bits
 #ifdef RGB_MATRIX_ENABLE
 #    define RGB_MATRIX_STARTUP_MODE RGB_MATRIX_SOLID_COLOR
 #    define ENABLE_RGB_MATRIX_ALPHAS_MODS
@@ -219,14 +223,3 @@
 #    define ENABLE_RGB_MATRIX_SOLID_SPLASH
 #    define ENABLE_RGB_MATRIX_SOLID_MULTISPLASH
 #endif
-
-// some config bits
-//#define RGB_MATRIX_KEYPRESSES // reacts to keypresses
-//#define RGB_MATRIX_KEYRELEASES // reacts to keyreleases (instead of keypresses)
-#define RGB_DISABLE_AFTER_TIMEOUT 900       // number of ticks to wait until disabling effects (ticks seem to be 1 per second on my RP2040)
-#define RGB_DISABLE_WHEN_USB_SUSPENDED true // turn off effects when suspended
-//#define RGB_MATRIX_LED_PROCESS_LIMIT (DRIVER_LED_TOTAL + 4) / 5 // limits the number of LEDs to process in an animation per task run (increases keyboard responsiveness)
-#define RGB_MATRIX_LED_FLUSH_LIMIT 8 // limits in milliseconds how frequently an animation will update the LEDs. 16 (16ms) is equivalent to limiting to 60fps (increases keyboard responsiveness)
-//#define RGB_MATRIX_LED_FLUSH_LIMIT 16 // limits in milliseconds how frequently an animation will update the LEDs. 16 (16ms) is equivalent to limiting to 60fps (increases keyboard responsiveness)
-#define RGB_MATRIX_MAXIMUM_BRIGHTNESS 64
-#define EECONFIG_RGB_MATRIX (uint32_t *)28

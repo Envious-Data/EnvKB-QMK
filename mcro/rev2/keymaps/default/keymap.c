@@ -1,4 +1,4 @@
-/* Copyright 2022 Adam K (@Envious-Data)
+/* Copyright 2021 sekigon-gonnoc
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -13,8 +13,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 #include QMK_KEYBOARD_H
+//#include "pico_eeprom.h"
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -29,15 +29,31 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         {KC_F17, KC_F18, KC_F19, KC_F20},
         {KC_F21, KC_F22, KC_F23, KC_F24},
     },
-    [2] = {
-        {KC_F13, KC_F14, KC_F15, KC_F16},
-        {KC_F17, KC_F18, KC_F19, KC_F20},
-        {KC_F21, KC_F22, KC_F23, KC_F24},
-    },
-    [3] = {
-        {KC_F13, KC_F14, KC_F15, KC_F16},
-        {KC_F17, KC_F18, KC_F19, KC_F20},
-        {KC_F21, KC_F22, KC_F23, KC_F24},
-    },
 };
 
+
+/* The encoder_update_user is a function.
+ * It'll be called by QMK every time you turn the encoder.
+ *
+ * The index parameter tells you which encoder was turned. If you only have
+ * one encoder, the index will always be zero.
+ * 
+ * The clockwise parameter tells you the direction of the encoder. It'll be
+ * true when you turned the encoder clockwise, and false otherwise.
+ */
+bool encoder_update_user(uint8_t index, bool clockwise) {
+    if (index == 1) { /* First encoder */
+        if (clockwise) {
+            tap_code_delay(KC_VOLU, 10);
+        } else {
+            tap_code_delay(KC_VOLD, 10);
+        }
+    } else if (index == 0) { /* Second encoder */
+        if (clockwise) {
+            rgb_matrix_increase_hue();
+        } else {
+            rgb_matrix_decrease_hue();
+        }
+    }
+    return false;
+}
