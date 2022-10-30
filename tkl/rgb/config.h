@@ -23,8 +23,8 @@
 #define VENDOR_ID 0xE739
 #define PRODUCT_ID 0xA400
 #define DEVICE_VER 0x0001
-#define MANUFACTURER EnviousDesign
-#define PRODUCT ALT Delirium RGB
+#define MANUFACTURER "EnviousDesign"
+#define PRODUCT "Alt Delirium RGB TKL"
 
 /* key matrix size */
 #define MATRIX_ROWS 6
@@ -48,8 +48,6 @@
     { GP20, GP21, GP22, GP26, GP27, GP28 }
 #define MATRIX_COL_PINS \
     { GP2, GP3, GP4, GP5, GP6, GP7, GP8, GP9, GP10, GP11, GP12, GP13, GP14, GP15, GP19, GP18, GP17, GP16 }
-#define UNUSED_PINS \
-    { GP1, GP23, GP24, GP29 }
 
 /* COL2ROW, ROW2COL */
 #define DIODE_DIRECTION COL2ROW
@@ -73,24 +71,24 @@
 //#define RGB_DI_PIN
 #define RGB_DI_PIN GP0
 //#ifdef RGB_DI_PIN
+#define RGB_MATRIX_LED_COUNT 88
 #define RGBLED_NUM 88
 #define RGBLIGHT_HUE_STEP 1
 #define RGBLIGHT_SAT_STEP 1
 #define RGBLIGHT_VAL_STEP 1
 #define RGBLIGHT_LIMIT_VAL 64 /* The maximum brightness level */
 #define RGBLIGHT_SLEEP        /* If defined, the RGB lighting will be switched off when the host goes to sleep */
-/*== all animations enable ==*/
-#define RGBLIGHT_ANIMATIONS
 /*== or choose animations ==*/
-//#    define RGBLIGHT_EFFECT_BREATHING
-//#    define RGBLIGHT_EFFECT_RAINBOW_MOOD
-//#    define RGBLIGHT_EFFECT_RAINBOW_SWIRL
-//#    define RGBLIGHT_EFFECT_SNAKE
-//#    define RGBLIGHT_EFFECT_KNIGHT
-//#    define RGBLIGHT_EFFECT_CHRISTMAS
-//#    define RGBLIGHT_EFFECT_STATIC_GRADIENT
-//#    define RGBLIGHT_EFFECT_RGB_TEST
-//#    define RGBLIGHT_EFFECT_ALTERNATING
+#define RGBLIGHT_EFFECT_BREATHING
+#define RGBLIGHT_EFFECT_RAINBOW_MOOD
+#define RGBLIGHT_EFFECT_RAINBOW_SWIRL
+#define RGBLIGHT_EFFECT_SNAKE
+#define RGBLIGHT_EFFECT_KNIGHT
+#define RGBLIGHT_EFFECT_CHRISTMAS
+#define RGBLIGHT_EFFECT_STATIC_GRADIENT
+#define RGBLIGHT_EFFECT_RGB_TEST
+#define RGBLIGHT_EFFECT_ALTERNATING
+#define RGBLIGHT_EFFECT_TWINKLE
 /*== customize breathing effect ==*/
 /*==== (DEFAULT) use fixed table instead of exp() and sin() ====*/
 //#    define RGBLIGHT_BREATHE_TABLE_SIZE 256      // 256(default) or 128 or 64
