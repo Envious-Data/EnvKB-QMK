@@ -19,13 +19,6 @@
 
 #include "config_common.h"
 
-/* USB Device descriptor parameter */
-#define PRODUCT "Delirium_TKL 1.0+"
-#define VENDOR_ID 0xE739
-#define PRODUCT_ID 0xA500
-#define DEVICE_VER 0x0001
-#define MANUFACTURER "EnviousDesign"
-
 /* key matrix size */
 #define MATRIX_ROWS 6
 #define MATRIX_COLS 18
@@ -148,14 +141,3 @@
 //#define NO_ACTION_TAPPING
 //#define NO_ACTION_ONESHOT
 
-/* disable these deprecated features by default */
-//#define NO_ACTION_MACRO
-//#define NO_ACTION_FUNCTION
-
-/* Bootmagic Lite key configuration */
-//#define BOOTMAGIC_LITE_ROW 0
-//#define BOOTMAGIC_LITE_COLUMN 0
-
-//#define I2C1_SDA_PIN GP0
-//#define I2C1_SCL_PIN GP1
-//#define I2C_DRIVER I2CD1

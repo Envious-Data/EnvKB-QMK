@@ -18,21 +18,12 @@
 
 #include "config_common.h"
 
-/* USB Device descriptor parameter */
-#define VENDOR_ID 0xE739
-#define PRODUCT_ID 0xA200
-#define DEVICE_VER 0x0001
-#define MANUFACTURER "EnviousDesign"
-#define PRODUCT "EnvKB 65M"
-
 /* key matrix size */
 #define MATRIX_ROWS 5
 #define MATRIX_COLS 17
 
-#define GPIO_INPUT_PIN_DELAY 100
-
-#define DEBUG_MATRIX_SCAN_RATE
-#define DEBUG_ACTION
+//#define DEBUG_MATRIX_SCAN_RATE
+//#define DEBUG_ACTION
 
 /*
  * KeyMatrix Assignments
@@ -148,10 +139,3 @@
 //#define NO_ACTION_TAPPING
 //#define NO_ACTION_ONESHOT
 
-/* disable these deprecated features by default */
-//#define NO_ACTION_MACRO
-//#define NO_ACTION_FUNCTION
-
-/* Bootmagic Lite key configuration */
-#define BOOTMAGIC_LITE_ROW 0
-#define BOOTMAGIC_LITE_COLUMN 0

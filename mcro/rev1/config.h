@@ -18,13 +18,6 @@
 
 #include "config_common.h"
 
-/* USB Device descriptor parameter */
-#define VENDOR_ID 0xE739
-#define PRODUCT_ID 0xA300
-#define DEVICE_VER 0x0011
-#define MANUFACTURER "EnviousDesign"
-#define PRODUCT "MCRO 1.0"
-
 /* key matrix size */
 #define MATRIX_ROWS 3
 #define MATRIX_COLS 4
@@ -144,11 +137,4 @@
 //#define NO_ACTION_TAPPING
 //#define NO_ACTION_ONESHOT
 
-/* disable these deprecated features by default */
-//#define NO_ACTION_MACRO
-//#define NO_ACTION_FUNCTION
 
-/* Bootmagic Lite key configuration */
-#define BOOTMAGIC_LITE_ROW 0
-#define BOOTMAGIC_LITE_COLUMN 0
-//#define DYNAMIC_KEYMAP_MACRO_COUNT 16
