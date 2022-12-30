@@ -19,18 +19,22 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "config_common.h"
 
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET // Activates the double-tap behavior
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 200U // Timeout window in ms in which the double tap can occur.
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_LED GP25 // Specify a optional status led by GPIO number which blinks when entering the bootloader
+
 /* USB Device descriptor parameter */
-#define VENDOR_ID    0x2345
-#define PRODUCT_ID   0x0548
-#define DEVICE_VER   0x0001
-#define MANUFACTURER EnviousDesign
-#define PRODUCT      MCRO 2.0
+//#define VENDOR_ID    0x2345
+//#define PRODUCT_ID   0x0548
+//#define DEVICE_VER   0x0001
+//#define MANUFACTURER "EnviousDesign"
+//#define PRODUCT      "MCRO 2.0"
 
 /* key matrix size */
-#define MATRIX_ROWS 3
-#define MATRIX_COLS 5
+//#define MATRIX_ROWS 3
+//#define MATRIX_COLS 5
 
-#define GPIO_INPUT_PIN_DELAY 100
+//#define GPIO_INPUT_PIN_DELAY 100
 
 //#define DEBUG_MATRIX_SCAN_RATE
 //#define DEBUG_ACTION
@@ -46,12 +50,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
 
-#define MATRIX_ROW_PINS { GP13, GP14, GP15 }
-#define MATRIX_COL_PINS { GP8, GP9, GP10, GP11, GP12 }
-#define UNUSED_PINS
+//#define MATRIX_ROW_PINS { GP13, GP14, GP15 }
+//#define MATRIX_COL_PINS { GP8, GP9, GP10, GP11, GP12 }
+//#define UNUSED_PINS
 
 /* COL2ROW, ROW2COL */
-#define DIODE_DIRECTION COL2ROW
+//#define DIODE_DIRECTION COL2ROW
 
 /*
  * Split Keyboard specific options, make sure you have 'SPLIT_KEYBOARD = yes' in your rules.mk, and define SOFT_SERIAL_PIN.
@@ -68,17 +72,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define BACKLIGHT_LEVELS 3
 //#define BACKLIGHT_BREATHING
 
-#define RGB_DI_PIN GP0
-#define DRIVER_LED_TOTAL 12
-#define RGBLED_NUM 12
+//#define RGB_DI_PIN GP0
+//#define DRIVER_LED_TOTAL 12
+#define RGB_MATRIX_LED_COUNT 12
+//#define RGBLED_NUM 12
 //#ifdef RGB_DI_PIN
-#    define RGBLIGHT_HUE_STEP 1
-#    define RGBLIGHT_SAT_STEP 1
-#    define RGBLIGHT_VAL_STEP 1
-#    define RGBLIGHT_LIMIT_VAL 64 /* The maximum brightness level */
-#    define RGBLIGHT_SLEEP  /* If defined, the RGB lighting will be switched off when the host goes to sleep */
-/*== all animations enable ==*/
-#    define RGBLIGHT_ANIMATIONS
+//#    define RGBLIGHT_HUE_STEP 1
+//#    define RGBLIGHT_SAT_STEP 1
+//#    define RGBLIGHT_VAL_STEP 1
+//#    define RGBLIGHT_LIMIT_VAL 64 /* The maximum brightness level */
+//#    define RGBLIGHT_SLEEP  /* If defined, the RGB lighting will be switched off when the host goes to sleep */
+///*== all animations enable ==*/
+//#    define RGBLIGHT_ANIMATIONS
 /*== or choose animations ==*/
 //#    define RGBLIGHT_EFFECT_BREATHING
 //#    define RGBLIGHT_EFFECT_RAINBOW_MOOD
@@ -100,16 +105,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //some config bits
 //#define RGB_MATRIX_KEYPRESSES // reacts to keypresses
 //#define RGB_MATRIX_KEYRELEASES // reacts to keyreleases (instead of keypresses)
-#define RGB_DISABLE_AFTER_TIMEOUT 0 // number of ticks to wait until disabling effects (ticks seem to be 1 per second on my RP2040)
-#define RGB_DISABLE_WHEN_USB_SUSPENDED true // turn off effects when suspended
-//#define RGB_MATRIX_LED_PROCESS_LIMIT (DRIVER_LED_TOTAL + 4) / 5 // limits the number of LEDs to process in an animation per task run (increases keyboard responsiveness)
-//#define RGB_MATRIX_LED_FLUSH_LIMIT 8 // limits in milliseconds how frequently an animation will update the LEDs. 16 (16ms) is equivalent to limiting to 60fps (increases keyboard responsiveness)
-//#define RGB_MATRIX_LED_FLUSH_LIMIT 16 // limits in milliseconds how frequently an animation will update the LEDs. 16 (16ms) is equivalent to limiting to 60fps (increases keyboard responsiveness)
-#define RGB_MATRIX_MAXIMUM_BRIGHTNESS 64
-//#define EECONFIG_RGB_MATRIX (uint32_t *)28
-
-/* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
-#define DEBOUNCE 5
+//#define RGB_DISABLE_AFTER_TIMEOUT 0 // number of ticks to wait until disabling effects (ticks seem to be 1 per second on my RP2040)
+//#define RGB_DISABLE_WHEN_USB_SUSPENDED true // turn off effects when suspended
+////#define RGB_MATRIX_LED_PROCESS_LIMIT (DRIVER_LED_TOTAL + 4) / 5 // limits the number of LEDs to process in an animation per task run (increases keyboard responsiveness)
+////#define RGB_MATRIX_LED_FLUSH_LIMIT 8 // limits in milliseconds how frequently an animation will update the LEDs. 16 (16ms) is equivalent to limiting to 60fps (increases keyboard responsiveness)
+////#define RGB_MATRIX_LED_FLUSH_LIMIT 16 // limits in milliseconds how frequently an animation will update the LEDs. 16 (16ms) is equivalent to limiting to 60fps (increases keyboard responsiveness)
+//#define RGB_MATRIX_MAXIMUM_BRIGHTNESS 64
+////#define EECONFIG_RGB_MATRIX (uint32_t *)28
+//
+///* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
+//#define DEBOUNCE 5
 
 /* define if matrix has ghost (lacks anti-ghosting diodes) */
 //#define MATRIX_HAS_GHOST
@@ -171,9 +176,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define DYNAMIC_KEYMAP_MACRO_COUNT 16
 
 //le rotary encoder lad
-#define ENCODERS_PAD_A { GP6 }
-#define ENCODERS_PAD_B { GP7 }
-#define ENCODER_RESOLUTION 4
+//#define ENCODERS_PAD_A { GP6 }
+//#define ENCODERS_PAD_B { GP7 }
+//#define ENCODER_RESOLUTION 4
 
 //some more RGB bits
 #ifdef RGB_MATRIX_ENABLE
@@ -223,3 +228,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #    define ENABLE_RGB_MATRIX_SOLID_SPLASH
 #    define ENABLE_RGB_MATRIX_SOLID_MULTISPLASH
 #endif
+//
