@@ -13,6 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+ 
 
 #pragma once
 
@@ -21,3 +22,8 @@
 /* Locking resynchronize hack */
 #define LOCKING_RESYNC_ENABLE
 
+#define I2C_DRIVER I2CD0
+#define I2C1_SDA_PIN GP1
+#define I2C1_SCL_PIN GP0
+#define OLED_BRIGHTNESS 0
+#define OLED_UPDATE_INTERVAL 50
