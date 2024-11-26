@@ -6,7 +6,9 @@
 A low cost Raspberry Pi Pico based keyboard inspired originally by the CFTKB Mysterium.
 
 * Keyboard Maintainer: [Envious-Data](https://github.com/envious-data)
-* Hardware Supported: EnvKB 60F V2 (Pi Pico)
+* Hardware Supported:
+  * EnvKB 60F V1(`60f/v1`)
+  * EnvKB 60F V2(`60f/v2`)
 * Hardware Availability: [GitHub](https://github.com/Envious-Data/Env-KB60F)
 
 Make example for this keyboard (after setting up your build environment):
