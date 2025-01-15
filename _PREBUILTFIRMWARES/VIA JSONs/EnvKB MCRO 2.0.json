@@ -1,16 +1,14 @@
 {
 	"name": "EnviousDesign MCRO 2.0",
-	"productId": "0x0548",
-	"vendorId": "0x2345",
-    "lighting": "qmk_rgblight",
-	"matrix": {
-		"rows": 3,
-		"cols": 5
-	},
-	"layouts": {
-		"labels": [],
-		"keymap": [
-			[
+  "vendorId": "0x2345",
+  "productId": "0x0548",
+  "matrix": {
+    "rows": 3,
+    "cols": 5
+  },
+  "layouts": {
+    "keymap": [
+ 			[
 				"0,0",
 				"0,1",
 				"0,2",
